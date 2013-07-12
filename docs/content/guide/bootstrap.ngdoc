@@ -120,8 +120,8 @@ Here is an example of manually initializing Angular when loading multiple Angula
       var HelloWorldAppModule = angular.module('OptionalHelloWorldModule', []);
       var KonnichiwaWorldAppModule = angular.module('OptionalKonnichiwaWorldModule', []);
       
-      angular.bootstrap($('#HelloWorldApp'), ['OptionalHelloWorldModule']);
-      angular.bootstrap($('#KonnichiwaWorldApp'), ['OptionalKonnichiwaWorldModule']);
+      angular.bootstrap(document.getElementById('HelloWorldApp'), ['OptionalHelloWorldModule']);
+      angular.bootstrap(document.getElementById('KonnichiwaWorldApp'), ['OptionalKonnichiwaWorldModule']);
        
     </script>
   </body>
