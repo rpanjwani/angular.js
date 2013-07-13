@@ -99,13 +99,10 @@ Here is an example of manually initializing Angular:
 </html>
 </pre>
 
-Here is an example of manually initializing Angular when loading multiple Angular apps on a page 
-(full plunkr here: http://plnkr.co/edit/IuTJgnSZPmKVHCwKWhcl):
-
-<pre>
-<!doctype html>
-<html xmlns:ng="http://angularjs.org">
-  <body>
+<doc:example>
+ Here is an example of manually initializing Angular when loading multiple Angular apps on a page.
+ Full plunkr here: http://plnkr.co/edit/IuTJgnSZPmKVHCwKWhcl
+  <doc:source>
     <div id='HelloWorldApp'>
       Hello {{'World'}}!
     </div>
@@ -114,19 +111,16 @@ Here is an example of manually initializing Angular when loading multiple Angula
       Konnichiwa {{'World'}}!
     </div>
     
-    <script src="http://code.angularjs.org/angular.js"></script>
-    <script>
     
+    <script>
       var HelloWorldAppModule = angular.module('OptionalHelloWorldModule', []);
       var KonnichiwaWorldAppModule = angular.module('OptionalKonnichiwaWorldModule', []);
       
       angular.bootstrap(document.getElementById('HelloWorldApp'), ['OptionalHelloWorldModule']);
-      angular.bootstrap(document.getElementById('KonnichiwaWorldApp'), ['OptionalKonnichiwaWorldModule']);
-       
+      angular.bootstrap(document.getElementById('KonnichiwaWorldApp'), ['OptionalKonnichiwaWorldModule']);       
     </script>
-  </body>
-</html>
-</pre>
+  </doc:source>
+</doc:example>
 
 Note that we have provided the name of our application module to be loaded into the injector as the second
 parameter of the {@link api/angular.bootstrap} function. This example is equivalent to using the
