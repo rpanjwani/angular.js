@@ -1,18 +1,5 @@
-var angularFiles = require('./angularFiles');
-var sharedConfig = require('./karma-shared.conf');
+'use strict';
 
-module.exports = function(config) {
-  sharedConfig(config);
+var karmaConfigFactory = require('./karma-jquery.conf-factory');
 
-  config.set({
-    files: angularFiles.mergeFilesFor('karmaJquery'),
-    exclude: angularFiles.mergeFilesFor('karmaJqueryExclude'),
-
-    junitReporter: {
-      outputFile: 'test_out/jquery.xml',
-      suite: 'jQuery'
-    }
-  });
-
-  config.sauceLabs.testName = 'AngularJS: jQuery';
-};
+module.exports = karmaConfigFactory();

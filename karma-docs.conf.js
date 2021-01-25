@@ -1,31 +1,16 @@
+'use strict';
+
 var sharedConfig = require('./karma-shared.conf');
 
 module.exports = function(config) {
-  sharedConfig(config);
+  sharedConfig(config, {testName: 'AngularJS: docs', logFile: 'karma-docs.log'});
 
   config.set({
     files: [
-      'build/docs/components/jquery.js',
-      'test/jquery_remove.js',
-
       'build/angular.js',
-      'build/angular-cookies.js',
       'build/angular-mocks.js',
-      'build/angular-resource.js',
-      'build/angular-mobile.js',
-      'build/angular-sanitize.js',
-      'build/angular-route.js',
-
-      'build/docs/components/lunr.js',
-      'build/docs/components/google-code-prettify.js',
-      'build/docs/components/showdown.js',
-
-      'build/docs/components/angular-bootstrap.js',
-      'build/docs/components/angular-bootstrap-prettify.js',
-      'build/docs/js/docs.js',
-      'build/docs/docs-data.js',
-
-      'docs/component-spec/*.js'
+      'docs/app/src/**/*.js',
+      'docs/app/test/**/*Spec.js'
     ],
 
     junitReporter: {
@@ -33,6 +18,4 @@ module.exports = function(config) {
       suite: 'Docs'
     }
   });
-
-  config.sauceLabs.testName = 'AngularJS: docs';
 };
